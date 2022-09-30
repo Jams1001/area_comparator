@@ -3,8 +3,8 @@ import numpy as np
 
 def areaF(imagePointer):
 
-    gray = cv2.cvtColor(imagePointer, cv2.COLOR_BGR2GRAY)
-    thresh = cv2.threshold(gray, 20, 255, cv2.THRESH_BINARY)[1]
+    binario = cv2.cvtColor(imagePointer, cv2.COLOR_BGR2GRAY)
+    thresh = cv2.threshold(binario, 20, 255, cv2.THRESH_BINARY)[1]
 
     cnts = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     cnts = cnts[0] if len(cnts) == 2 else cnts[1]
